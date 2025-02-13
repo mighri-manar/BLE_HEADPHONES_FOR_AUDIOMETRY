@@ -67,46 +67,46 @@ static void lfclk_request_cb(struct onoff_manager *mgr, struct onoff_client *cli
  */
 static int32_t m_lfclk_wait(void)
 {
-	int32_t err;
+	//int32_t err;
 
-	if (atomic_get(&m_lfclk_state.m_clk_ready) == (atomic_val_t) true) {
-		return 0;
-	}
+	// if (atomic_get(&m_lfclk_state.m_clk_ready) == (atomic_val_t) true) {
+	// 	return 0;
+	// }
 
-	/* Check if lfclk has been requested */
-	if (atomic_get(&m_lfclk_state.m_clk_refcnt) <= (atomic_val_t)0) {
-		return -NRF_EINVAL;
-	}
+	// /* Check if lfclk has been requested */
+	// if (atomic_get(&m_lfclk_state.m_clk_refcnt) <= (atomic_val_t)0) {
+	// 	return -NRF_EINVAL;
+	// }
 
-	/* Wait for response from clock control */
-	err = k_sem_take(&m_lfclk_state.sem, K_MSEC(MPSL_LFCLK_REQUEST_WAIT_TIMEOUT_MS));
-	if (err < 0) {
-		/* Do a gracefull cancel of the request, the function release does this
-		 * as well as and relase.
-		 */
-		(void)m_lfclk_release();
+	// /* Wait for response from clock control */
+	// err = k_sem_take(&m_lfclk_state.sem, K_MSEC(MPSL_LFCLK_REQUEST_WAIT_TIMEOUT_MS));
+	// if (err < 0) {
+	// 	/* Do a gracefull cancel of the request, the function release does this
+	// 	 * as well as and relase.
+	// 	 */
+	// 	(void)m_lfclk_release();
 
-		return -NRF_EFAULT;
-	}
+	// 	return -NRF_EFAULT;
+	// }
 
-	if (IS_ENABLED(CONFIG_CLOCK_CONTROL_NRF2) && m_lfclk_state.clk_req_rsp == -ETIMEDOUT) {
-		/* Due to NCSDK-31169, temporarily allow for LFCLK request to timeout.
-		 * That doens't break anything now because the LFCLK requested clock is
-		 * 500PPM and such LFCLK should be running from boot of the radio core.
-		 */
-		LOG_WRN("LFCLK could not be started: %d", m_lfclk_state.clk_req_rsp);
-		return 0;
-	} else if (m_lfclk_state.clk_req_rsp < 0) {
-		__ASSERT(false, "LFCLK could not be started, reason: %d",
-			 m_lfclk_state.clk_req_rsp);
-		/* Possible failure reasons:
-		 *  # -ERRTIMEDOUT - nRFS service timeout
-		 *  # -EIO - nRFS service error
-		 *  # -ENXIO - request rejected
-		 * All these mean failure for MPSL.
-		 */
-		return -NRF_EFAULT;
-	}
+	// if (IS_ENABLED(CONFIG_CLOCK_CONTROL_NRF2) && m_lfclk_state.clk_req_rsp == -ETIMEDOUT) {
+	// 	/* Due to NCSDK-31169, temporarily allow for LFCLK request to timeout.
+	// 	 * That doens't break anything now because the LFCLK requested clock is
+	// 	 * 500PPM and such LFCLK should be running from boot of the radio core.
+	// 	 */
+	// 	LOG_WRN("LFCLK could not be started: %d", m_lfclk_state.clk_req_rsp);
+	// 	return 0;
+	// } else if (m_lfclk_state.clk_req_rsp < 0) {
+	// 	__ASSERT(false, "LFCLK could not be started, reason: %d",
+	// 		 m_lfclk_state.clk_req_rsp);
+	// 	/* Possible failure reasons:
+	// 	 *  # -ERRTIMEDOUT - nRFS service timeout
+	// 	 *  # -EIO - nRFS service error
+	// 	 *  # -ENXIO - request rejected
+	// 	 * All these mean failure for MPSL.
+	// 	 */
+	// 	return -NRF_EFAULT;
+	// }
 
 	atomic_set(&m_lfclk_state.m_clk_ready, (atomic_val_t) true);
 
@@ -180,23 +180,23 @@ static bool m_lfclk_calibration_is_enabled(void)
 
 static int32_t m_lfclk_request(void)
 {
-	struct onoff_manager *mgr = z_nrf_clock_control_get_onoff(CLOCK_CONTROL_NRF_SUBSYS_LF);
-	int32_t err;
+	// struct onoff_manager *mgr = z_nrf_clock_control_get_onoff(CLOCK_CONTROL_NRF_SUBSYS_LF);
+	// int32_t err;
 
-	/* Workaround for NRFX-6865. The nrf clock control as well as nrfx_clock doesn't enable
-	 * HFXO when LFSYNTH is selected as LFCLK source. Remove the code when nrfx is fixed.
-	 */
-	if (IS_ENABLED(CONFIG_CLOCK_CONTROL_NRF_K32SRC_SYNTH)) {
-		m_hfclk_request();
-	}
+	// /* Workaround for NRFX-6865. The nrf clock control as well as nrfx_clock doesn't enable
+	//  * HFXO when LFSYNTH is selected as LFCLK source. Remove the code when nrfx is fixed.
+	//  */
+	// if (IS_ENABLED(CONFIG_CLOCK_CONTROL_NRF_K32SRC_SYNTH)) {
+	// 	m_hfclk_request();
+	// }
 
-	sys_notify_init_callback(&m_lfclk_state.cli.notify, lfclk_request_cb);
-	(void)k_sem_init(&m_lfclk_state.sem, 0, 1);
+	// sys_notify_init_callback(&m_lfclk_state.cli.notify, lfclk_request_cb);
+	// (void)k_sem_init(&m_lfclk_state.sem, 0, 1);
 
-	err = onoff_request(mgr, &m_lfclk_state.cli);
-	if (err < 0) {
-		return err;
-	}
+	// err = onoff_request(mgr, &m_lfclk_state.cli);
+	// if (err < 0) {
+	// 	return err;
+	// }
 
 	atomic_inc(&m_lfclk_state.m_clk_refcnt);
 
