@@ -370,7 +370,7 @@ static int32_t mpsl_lib_init_internal(void)
 	/* TODO: Clock config should be adapted in the future to new architecture. */
 #if !defined(CONFIG_MPSL_USE_EXTERNAL_CLOCK_CONTROL)
 	clock_cfg.source = m_config_clock_source_get();
-	clock_cfg.accuracy_ppm = CONFIG_CLOCK_CONTROL_NRF_ACCURACY;
+	clock_cfg.accuracy_ppm = 500;//CONFIG_CLOCK_CONTROL_NRF_ACCURACY;
 	clock_cfg.skip_wait_lfclk_started =
 		IS_ENABLED(CONFIG_SYSTEM_CLOCK_NO_WAIT);
 
