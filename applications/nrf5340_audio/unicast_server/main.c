@@ -26,6 +26,12 @@
 #include "fw_info_app.h"
 
 #include <zephyr/logging/log.h>
+/*-------------------------------------------------------------*/
+#define RGB2_RED_NODE DT_ALIAS(led3)
+
+static const struct gpio_dt_spec rgb2_red = GPIO_DT_SPEC_GET(RGB2_RED_NODE, gpios);
+/*-------------------------------------------------------------*/
+
 LOG_MODULE_REGISTER(main, CONFIG_MAIN_LOG_LEVEL);
 
 ZBUS_SUBSCRIBER_DEFINE(button_evt_sub, CONFIG_BUTTON_MSG_SUB_QUEUE_SIZE);
@@ -41,12 +47,21 @@ ZBUS_OBS_DECLARE(volume_evt_sub);
 
 static struct k_thread button_msg_sub_thread_data;
 static struct k_thread le_audio_msg_sub_thread_data;
-
+/*-------------------------------------------------------------*/
+struct k_thread blink_rgb2_red_thread_data; 
+/*-------------------------------------------------------------*/
 static k_tid_t button_msg_sub_thread_id;
 static k_tid_t le_audio_msg_sub_thread_id;
 
+
 K_THREAD_STACK_DEFINE(button_msg_sub_thread_stack, CONFIG_BUTTON_MSG_SUB_STACK_SIZE);
 K_THREAD_STACK_DEFINE(le_audio_msg_sub_thread_stack, CONFIG_LE_AUDIO_MSG_SUB_STACK_SIZE);
+
+/*-------------------------------------------------------------*/
+
+K_THREAD_STACK_DEFINE(blink_rgb2_red_stack, 1024); 
+
+/*-------------------------------------------------------------*/
 
 static enum stream_state strm_state = STATE_PAUSED;
 
@@ -55,6 +70,22 @@ static void stream_state_set(enum stream_state stream_state_new)
 {
 	strm_state = stream_state_new;
 }
+
+
+
+/*-------------------------------------------------------------*/
+
+void blink_rgb2_red(void *arg1, void *arg2, void *arg3)
+{
+
+	gpio_pin_configure_dt(&rgb2_red, GPIO_OUTPUT_ACTIVE);
+
+	while (1) {
+		gpio_pin_toggle_dt(&rgb2_red);
+		k_msleep(1000);      }
+}
+
+/*-------------------------------------------------------------*/
 
 /**
  * @brief	Handle button activity.
@@ -519,7 +550,11 @@ int main(void)
 	static struct bt_data ext_adv_buf[CONFIG_EXT_ADV_BUF_MAX];
 
 	LOG_DBG("Main started");
-
+	/*-------------------------------------------------------------*/
+	k_thread_create(&blink_rgb2_red_thread_data, blink_rgb2_red_stack,
+                    K_THREAD_STACK_SIZEOF(blink_rgb2_red_stack), blink_rgb2_red,
+                    NULL, NULL, NULL, 7, 0, K_NO_WAIT);
+	/*-------------------------------------------------------------*/
 	size_t ext_adv_buf_cnt = 0;
 
 	ret = nrf5340_audio_dk_init();
