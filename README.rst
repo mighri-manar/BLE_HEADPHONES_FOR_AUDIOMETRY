@@ -30,8 +30,11 @@ This fork builds upon the original nRF5340 Audio application with the following 
 
 
 📡 Ambient Noise Detection: Measures surrounding noise levels and transmits a signal indicating noise conditions.
+
 🎵 Enhanced Audio Processing: Adapts hearing test signals based on ambient noise to improve accuracy.
+
 🔧 Codec Evaluation & Implementation: Investigating additional codec support for improved audio signal processing.
+
 
 
 🚀 Getting Started
