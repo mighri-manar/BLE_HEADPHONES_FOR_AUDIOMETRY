@@ -1196,6 +1196,14 @@ static int cmd_audio_pres_comp_disable(const struct shell *shell, size_t argc, c
 	return 0;
 }
 
+
+
+struct data_fifo *audio_datapath_get_rx_fifo(void)
+{
+    return ctrl_blk.in.fifo;
+}
+
+
 SHELL_STATIC_SUBCMD_SET_CREATE(test_cmd,
 			       SHELL_COND_CMD(CONFIG_SHELL, nrf_tone_start, NULL,
 					      "Start local tone from nRF5340", cmd_i2s_tone_play),
