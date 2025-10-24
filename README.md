@@ -12,7 +12,7 @@
 
 ## 🎯 Project Overview
 
-This project implements a **real-time embedded audiometric system** designed to address the global hearing loss crisis through accessible, wireless diagnostic tools. Developed in collaboration with **dB.Sense**, a medical device spin-off, the system enables decentralized hearing tests using Bluetooth Low Energy Audio technology.
+This project implements a **real-time embedded audiometric system** designed to address the global hearing loss crisis through accessible, wireless diagnostic tools. Developed in collaboration with **dB.Sense**, the system enables decentralized hearing tests using Bluetooth Low Energy Audio technology.
 
 ### Medical Context
 
@@ -396,12 +396,6 @@ A comprehensive **36-page academic report** is included in `doc/PFA2_Report_Mana
 
 ---
 
-## 🏆 Project Impact
-
-### Medical Device Development
-- **Clinical Partner**: dB.Sense (spin-off from University of Tunis El Manar)
-- **Target Population**: 430M+ people with hearing loss globally
-- **Use Cases**: Pediatric screening, rural health, autism-friendly diagnostics
 
 ### Technical Contributions
 - ✅ First implementation of BLE Audio for medical audiometry in Tunisia
@@ -409,24 +403,8 @@ A comprehensive **36-page academic report** is included in `doc/PFA2_Report_Mana
 - ✅ Demonstrated feasibility of wireless diagnostic headphones
 - ✅ Open-source foundation for future embedded audio projects
 
-### Academic Recognition
-- **Supervisors**: Prof. Meriem JAIDANE (ENIT), Dr. Nader MECHERGUI (dB.Sense)
-- **Institution**: National Engineering School of Tunis (ENIT)
-- **Program**: 2nd Year Telecommunications Engineering
-- **Year**: 2024/2025
 
----
 
-## 👥 Team
-
-**Author**: Manar MIGHRI  
-**Role**: Embedded Systems Engineer / Project Lead  
-**Institution**: National Engineering School of Tunis (ENIT)  
-**Supervisors**:  
-- Prof. Meriem JAIDANE (ENIT / dB.Sense co-founder)  
-- Dr. Nader MECHERGUI (PhD Engineer / dB.Sense co-founder)
-
-**Organization**: dB.Sense Innovation Center (University of Tunis El Manar spin-off)
 
 ---
 
@@ -434,7 +412,7 @@ A comprehensive **36-page academic report** is included in `doc/PFA2_Report_Mana
 
 **Email**: manar.mighri@etudiant-enit.utm.tn  
 **LinkedIn**: [Manar Mighri](https://linkedin.com/in/manar-mighri)  
-**GitHub**: [mighri-manar](https://github.com/mighri-manar)
+
 
 ---
 
@@ -445,17 +423,15 @@ This project is based on the [nRF Connect SDK](https://github.com/nrfconnect/sdk
 **Base SDK License**: Apache 2.0 / Nordic 5-Clause BSD  
 **Modifications**: © 2024-2025 Manar Mighri / dB.Sense
 
-For commercial use or medical device certification, please contact dB.Sense.
 
 ---
 
 ## 🙏 Acknowledgments
 
 Special thanks to:
-- **dB.Sense team** for providing hardware and clinical context
+- **dB.Sense team** for providing hardware
 - **Nordic Semiconductor** for excellent SDK documentation and support
 - **Zephyr Project community** for RTOS foundation
-- **ENIT faculty** for academic guidance
 
 ---
 
