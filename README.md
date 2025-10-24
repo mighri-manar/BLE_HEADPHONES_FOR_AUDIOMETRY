@@ -376,7 +376,7 @@ Total: ~40ms (within <50ms target)
 ## 📄 Documentation
 
 ### Technical Report
-A comprehensive **36-page academic report** is included in `doc/PFA2_Report_Manar_Mighri.pdf`, covering:
+A comprehensive **36-page academic report** is included in `PFA2_Report_Manar_Mighri.pdf`, covering:
 - Medical and societal context (WHO hearing loss crisis)
 - System architecture and design decisions
 - Implementation details (RTOS, BLE Audio, noise monitoring)
