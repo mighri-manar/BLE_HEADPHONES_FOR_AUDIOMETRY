@@ -28,7 +28,7 @@
 ### 🎥 System Demo
 ![System Demo](my_docs/4.mp4)
 
-*9-second demonstration: Real-time BLE Audio streaming with concurrent ambient noise monitoring. Green LEDs activate when noise threshold is exceeded (RMS > 400).*
+*9-second demonstration: Real-time BLE Audio streaming with concurrent ambient noise monitoring. Red LED activate when noise threshold is exceeded (RMS > 400).*
 
 
 ## 🎯 Project Overview
