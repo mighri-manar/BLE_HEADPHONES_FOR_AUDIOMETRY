@@ -8,7 +8,28 @@
 ![BLE Audio](https://img.shields.io/badge/BLE_Audio-LC3_Codec-purple?style=flat)
 ![C](https://img.shields.io/badge/C-Embedded-00599C?style=flat&logo=c&logoColor=white)
 
+## ⚡ Quick Overview
+
+**What:** Medical-grade wireless hearing diagnostic device  
+**Hardware:** Nordic nRF5340 Audio DK (dual-core ARM Cortex-M33)  
+**Built At:** dB.Sense Innovation Center (5-month internship project)  
+**Documentation:** [36-page technical report](my_docs/PFA2_Report_Manar_Mighri.pdf)
+
 ---
+
+## 📸 Hardware Setup
+
+<p align="center">
+  <img src="my_docs/2.jpg" width="45%">
+  <img src="my_docs/3.jpg" width="45%">
+</p>
+
+---
+### 🎥 System Demo
+![System Demo](my_docs/4.mp4)
+
+*9-second demonstration: Real-time BLE Audio streaming with concurrent ambient noise monitoring. Green LEDs activate when noise threshold is exceeded (RMS > 400).*
+
 
 ## 🎯 Project Overview
 
@@ -376,7 +397,7 @@ Total: ~40ms (within <50ms target)
 ## 📄 Documentation
 
 ### Technical Report
-A comprehensive **36-page academic report** is included in `PFA2_Report_Manar_Mighri.pdf`, covering:
+A comprehensive **36-page academic report** is included in `my_docs/PFA2_Report_Manar_Mighri.pdf`, covering:
 - Medical and societal context (WHO hearing loss crisis)
 - System architecture and design decisions
 - Implementation details (RTOS, BLE Audio, noise monitoring)
