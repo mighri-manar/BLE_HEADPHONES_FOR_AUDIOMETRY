@@ -471,3 +471,14 @@ Special thanks to:
 ---
 
 *This project contributes to making hearing diagnostics more accessible, portable, and patient-centered, addressing a critical global health challenge through innovative embedded systems engineering.*
+
+---
+
+<div align="center">
+
+### If you found this project helpful, give it a ⭐!
+
+**Made with ❤️ and ☕ by Manar**
+
+
+</div>
