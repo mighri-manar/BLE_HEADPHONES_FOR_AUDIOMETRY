@@ -476,7 +476,6 @@ Special thanks to:
 
 <div align="center">
 
-### If you found this project helpful, give it a ⭐!
 
 **Made with ❤️ and ☕ by Manar**
 
