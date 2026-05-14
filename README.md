@@ -8,7 +8,7 @@
 ![BLE Audio](https://img.shields.io/badge/BLE_Audio-LC3_Codec-purple?style=flat)
 ![C](https://img.shields.io/badge/C-Embedded-00599C?style=flat&logo=c&logoColor=white)
 
-## ⚡ Quick Overview
+##  Quick Overview
 
 **What:** Medical-grade wireless hearing diagnostic device  
 **Hardware:** Nordic nRF5340 Audio DK (dual-core ARM Cortex-M33)  
@@ -17,7 +17,7 @@
 
 ---
 
-## 📸 Hardware Setup
+##  Hardware Setup
 
 <p align="center">
   <img src="my_docs/2.jpg" width="45%">
@@ -25,13 +25,13 @@
 </p>
 
 ---
-### 🎥 System Demo
+###  System Demo
 ![System Demo](my_docs/4.mp4)
 
 *9-second demonstration: Real-time BLE Audio streaming with concurrent ambient noise monitoring. Red LED activate when noise threshold is exceeded (RMS > 400).*
 
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project implements a **real-time embedded audiometric system** designed to address the global hearing loss crisis through accessible, wireless diagnostic tools. Developed in collaboration with **dB.Sense**, the system enables decentralized hearing tests using Bluetooth Low Energy Audio technology.
 
@@ -49,25 +49,25 @@ A portable, wireless audiometric platform built on:
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ### Core Functionality
-- ✅ **Wireless Audio Streaming**: BLE Audio unicast with LC3 codec compression
-- ✅ **Real-Time Noise Monitoring**: Concurrent ambient noise measurement via I²S MEMS microphone
-- ✅ **Sub-50ms Latency**: End-to-end audio processing for medical-grade diagnostics
-- ✅ **Multi-Threaded Architecture**: Priority-based task scheduling under Zephyr RTOS
-- ✅ **Visual Feedback System**: RGB LED indicators for noise threshold detection
-- ✅ **Dual-Core Utilization**: Network core (BLE stack) + Application core (audio processing)
+-  **Wireless Audio Streaming**: BLE Audio unicast with LC3 codec compression
+-  **Real-Time Noise Monitoring**: Concurrent ambient noise measurement via I²S MEMS microphone
+-  **Sub-50ms Latency**: End-to-end audio processing for medical-grade diagnostics
+-  **Multi-Threaded Architecture**: Priority-based task scheduling under Zephyr RTOS
+-  **Visual Feedback System**: RGB LED indicators for noise threshold detection
+-  **Dual-Core Utilization**: Network core (BLE stack) + Application core (audio processing)
 
 ### Medical/Clinical Features
-- 🏥 **Decentralized Testing**: Portable system for school, home, or community screenings
-- 👶 **Pediatric-Friendly**: Wireless design accommodates movement (autism-friendly)
-- 📊 **Environmental Validation**: Real-time noise level monitoring with configurable thresholds
-- 🔊 **Collective Testing Ready**: Architecture supports future multi-patient screening
+-  **Decentralized Testing**: Portable system for school, home, or community screenings
+-  **Pediatric-Friendly**: Wireless design accommodates movement (autism-friendly)
+-  **Environmental Validation**: Real-time noise level monitoring with configurable thresholds
+-  **Collective Testing Ready**: Architecture supports future multi-patient screening
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### Hardware Layer
 ```
@@ -204,14 +204,14 @@ if (rms > 400 && !led_on) {
 | **Audio Dropout Rate** | 0% | <0.1% |
 
 ### Testing Results
-✅ **BLE Audio Streaming**: Stable unicast link with zero dropouts under normal conditions  
-✅ **Noise Monitoring**: Successful RMS calculation and threshold detection  
-✅ **System Coexistence**: No interference between audio streaming and noise processing  
-✅ **Stress Testing**: Maintained performance under high ambient noise (clapping, music)
+ **BLE Audio Streaming**: Stable unicast link with zero dropouts under normal conditions  
+ **Noise Monitoring**: Successful RMS calculation and threshold detection  
+ **System Coexistence**: No interference between audio streaming and noise processing  
+ **Stress Testing**: Maintained performance under high ambient noise (clapping, music)
 
 ---
 
-## 🛠️ Technologies & Tools
+##  Technologies & Tools
 
 ### Hardware
 - **MCU**: Nordic nRF5340 (dual-core ARM Cortex-M33)
@@ -235,7 +235,7 @@ if (rms > 400 && !led_on) {
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 BLE_HEADPHONES_FOR_AUDIOMETRY/
@@ -263,7 +263,7 @@ BLE_HEADPHONES_FOR_AUDIOMETRY/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - **nRF Connect SDK** v2.x or later
@@ -324,7 +324,7 @@ CONFIG_AUDIO_DEV=HEADSET           # Server role (diagnostic headphones)
 
 ---
 
-## 🧪 Testing & Validation
+##  Testing & Validation
 
 ### Unit Testing
 ```bash
@@ -373,7 +373,7 @@ Total: ~40ms (within <50ms target)
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 ### Short-Term Enhancements
 - [ ] **Dynamic Thresholding**: Adaptive noise level detection based on moving averages
@@ -419,17 +419,17 @@ A comprehensive **36-page academic report** is included in `my_docs/PFA2_Report_
 
 
 ### Technical Contributions
-- ✅ First implementation of BLE Audio for medical audiometry in Tunisia
-- ✅ Validated dual-core RTOS architecture for real-time medical devices
-- ✅ Demonstrated feasibility of wireless diagnostic headphones
-- ✅ Open-source foundation for future embedded audio projects
+-  First implementation of BLE Audio for medical audiometry in Tunisia
+-  Validated dual-core RTOS architecture for real-time medical devices
+-  Demonstrated feasibility of wireless diagnostic headphones
+-  Open-source foundation for future embedded audio projects
 
 
 
 
 ---
 
-## 📧 Contact
+##  Contact
 
 **Email**: manar.mighri@etudiant-enit.utm.tn  
 **LinkedIn**: [Manar Mighri](https://linkedin.com/in/manar-mighri)  
@@ -437,7 +437,7 @@ A comprehensive **36-page academic report** is included in `my_docs/PFA2_Report_
 
 ---
 
-## 📜 License
+##  License
 
 This project is based on the [nRF Connect SDK](https://github.com/nrfconnect/sdk-nrf) and follows its original licensing terms.
 
@@ -447,7 +447,7 @@ This project is based on the [nRF Connect SDK](https://github.com/nrfconnect/sdk
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Special thanks to:
 - **dB.Sense team** for providing hardware
@@ -456,7 +456,7 @@ Special thanks to:
 
 ---
 
-## 📚 References
+##  References
 
 [1] World Health Organization. "World Report on Hearing" (2021)  
 [2] Bluetooth SIG. "Bluetooth LE Audio Specifications" (2020)  
