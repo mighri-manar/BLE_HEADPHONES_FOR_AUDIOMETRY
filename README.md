@@ -186,7 +186,7 @@ if (rms > 400 && !led_on) {
 
 ---
 
-## 📊 System Validation & Performance
+##  System Validation & Performance
 
 ### Experimental Setup
 - **Platform**: 2× nRF5340 Audio DK (client + server)
